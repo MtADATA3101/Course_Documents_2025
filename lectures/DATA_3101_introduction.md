@@ -95,28 +95,21 @@ Attending > 85% of classes live, either in-person or online
 Attempting most problem sets in R assignments
 Asking for help, helping others, contributing to class discussions
 Very clear documentation of AI usage (using comments in code files, screenshots in other assignments, and descriptions in issue submissions)
-- Taking full advantage of CEWIL opportunity:
-udemy course(s) completed before the work with CRKN
-participating in discussions with community partners
-substantive contribution to CRKN projects
+- Taking full advantage of CEWIL opportunity: udemy course(s) completed before the work with CRKN, participating in discussions with community partners, substantive contribution to CRKN projects
 
 ## Ungrading: B-level work
 - Attending 70-85% of classes live, either in-person or online
 - Very clear documentation of AI usage (using comments in code files, screenshots in other assignments, and descriptions in issue submissions)
 - Some assignments submitted late
 - Active participation in CEWIL project:
-udemy courses complete during the work with CRKN
-present (in-person or online) for all sessions with community partners
-average contribution to project
+udemy courses complete during the work with CRKN, present (in-person or online) for all sessions with community partners, average contribution to project
 
 ## Ungrading: C-level work
 - If there is any unclear documentation of AI usage, this is the highest grade possible in the class. All other work would have to be at the A or B level to be considered for a C.
 - Attendance is < 70%
 - Assignments routinely late
 - Moderate engagement with CEWIL opportunities:
-missed 1-2 sessions with our community partners
-udemy course(s) not complete
-minimal contribution to project
+missed 1-2 sessions with our community partners, udemy course(s) in progress but not complete, minimal contribution to project
 
 ## Ungrading: D-level work
 - Not meeting the standard established for A, B, or C-level work
