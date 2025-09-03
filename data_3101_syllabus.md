@@ -256,7 +256,9 @@ November 11 - no classes (Remembrance Day)
 
 - Data Acquisition in R (import and webscraping)
 
-#### Ungrading Meetings outside of class time
+#### Week 13 (Dec. 2 & 4)
+
+- Ungrading Meetings during class time
 
 # Course Policies
 
