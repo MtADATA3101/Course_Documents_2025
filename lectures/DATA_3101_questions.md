@@ -3,18 +3,18 @@ Git & GitHub catchup
 
 ## 2025 Questions from Assignment 1:
 
-1.  \*\*What exactly is Git? I mean obviously we’re working with it,
-    it’s some sort of way to share code around in one neat spot. We’re
+1.  **What exactly is Git? I mean obviously we’re working with it, it’s
+    some sort of way to share code around in one neat spot. We’re
     working with GitHub here, but I know GitLab exists too. Are they the
     same thing? Is “Git” just like a general term for this type of
     platform? And if “Git” is just the name for this type of
     collaborative space, why did the call it “Git”? It’s a pretty funny
-    name!
+    name!**
 
-I’d also be curious to know where the Git terminology comes from (push,
-pull, commit, whatever else). To me, they’re not the most intuitive
-terms for what they actually mean, so I wonder if there’s a good reason
-for the use of these terms.\*\*
+**I’d also be curious to know where the Git terminology comes from
+(push, pull, commit, whatever else). To me, they’re not the most
+intuitive terms for what they actually mean, so I wonder if there’s a
+good reason for the use of these terms.**
 
 This is a great question. Keep asking clarifying conceptual questions so
 that this isn’t us:
@@ -56,6 +56,10 @@ article](https://en.wikipedia.org/wiki/Git). For a more technical
 history, published 20 years after the development of Git, read this [Q&A
 with Linus
 Torvalds](https://github.blog/open-source/git/git-turns-20-a-qa-with-linus-torvalds/).
+In the Q&A, Torvalds says there were “flame wars” over the subcommand
+names (Blau, 2024). You can dig into that if you’re curious - but I
+think the main thing here is that there is a lot of jargon and lore in
+this history!
 
 ## 2024 Questions from Assignment 1:
 
