@@ -11,9 +11,9 @@ output: github_document
 -   Also used in DATA 3001 Data Visualization and Communication
 -   A good challenge for Computer Science students in this interdisciplinary course - the more tools you know, the better! You can then evaluate which suits your needs depending on your project partners.
 
-## R Tour
+## RStudio Tour
 
-When you open R, it will have 3 areas:
+When you open RStudio, it will have 3 areas:
 
 -   Console / Terminal: You can run code in the console. For example, installing packages is usually done in the console.
 
@@ -52,7 +52,7 @@ When you create a file in your RStudio project, you have a few choices.
 
 For reproducible code, often you'll choose an R script file (file extension .R).
 
-Common choices for a mixture of code and text are an R notebook (file extension: .Rmd), or a Quarto document.
+Common choices for a mixture of code and text are an R notebook (file extension: .Rmd), or a Quarto document (.qmd).
 
 Most of my past course content was created as R notebooks (.Rmd files) because they are the way I learned how to combine markup text with code. I set the output of my file to github_document to create .md files that can be easily read in GitHub.
 

@@ -12,9 +12,9 @@ Elizabeth Stregger
   can then evaluate which suits your needs depending on your project
   partners.
 
-## R Tour
+## RStudio Tour
 
-When you open R, it will have 3 areas:
+When you open RStudio, it will have 3 areas:
 
 - Console / Terminal: You can run code in the console. For example,
   installing packages is usually done in the console.
@@ -61,7 +61,7 @@ For reproducible code, often you’ll choose an R script file (file
 extension .R).
 
 Common choices for a mixture of code and text are an R notebook (file
-extension: .Rmd), or a Quarto document.
+extension: .Rmd), or a Quarto document (.qmd).
 
 Most of my past course content was created as R notebooks (.Rmd files)
 because they are the way I learned how to combine markup text with code.
