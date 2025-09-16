@@ -9,7 +9,7 @@ output: github_document
 
 -   Widely used in Open Science to write and share reproducible code
 -   Also used in DATA 3001 Data Visualization and Communication
--   A good challenge for Computer Science students in this interdisciplinary course - the more tools you know, the better! You can then evaluate which suits your needs more.
+-   A good challenge for Computer Science students in this interdisciplinary course - the more tools you know, the better! You can then evaluate which suits your needs depending on your project partners.
 
 ## R Tour
 
@@ -33,27 +33,47 @@ Zooming in and out is done with keyboard shortcuts:
 
 -   Zoom out: Cmd/Ctrl -
 
-## Using R like a Calculator
+## Using R like a calculator in the console
 
-- Test arithmetic and order of operations
-  - Parentheses: ()
-  - Exponents: ^ or **
-  - Multiply: *
-  - Divide: /
-  - Add: +
-  - Subtract: -
-- Cancel an incomplete command by hitting Esc in the Console window
+-   Test arithmetic and order of operations
+    -   Parentheses: ()
+    -   Exponents: \^ or \*\*
+    -   Multiply: \*
+    -   Divide: /
+    -   Add: +
+    -   Subtract: -
+-   Cancel an incomplete command by hitting Esc in the Console window
 
 **Check-in question**: How does R indicate that is ready for the next command?
 
-## R Script files and RNotebook Files
+## R Script files, R Notebook files, and Quarto documents
 
-For reproducibility, you'll usually want an R script file (file extension .R) or an R notebook (file extension: .Rmd). Most of my class content will be R notebooks because they are the easiest way to combine markup text with code. I set the output of my file to github_document to create .md files that can be easily read in GitHub.
+When you create a file in your RStudio project, you have a few choices.
 
-# Today: Compare R Script files and RNotebook files
+For reproducible code, often you'll choose an R script file (file extension .R).
 
-Go to File -> New File -> R Script and create a new R Script file. Save it as DATA_3101_test_script.R
+Common choices for a mixture of code and text are an R notebook (file extension: .Rmd), or a Quarto document.
 
-Go to File -> New File -> R Notebook and create a new R Notebook. Save it as DATA_3101_test_notebook.Rmd
+Most of my past course content was created as R notebooks (.Rmd files) because they are the way I learned how to combine markup text with code. I set the output of my file to github_document to create .md files that can be easily read in GitHub.
 
+[Quarto](https://quarto.org/) is a more modern, multi-language approach to creating this type of document. The second edition of *R for Data Science* includes a [chapter on Quarto](https://r4ds.hadley.nz/quarto.html) instead of content on R notebooks. Over this term, I'll be switching to using Quarto.
 
+# Today: Compare Quarto documents and R script files
+
+Open your DATA 3101 RStudio project.
+
+### Quarto Document
+
+Go to File -\> New File -\> Quarto Document and create a new Quarto document, selecting the html option.
+
+Change the output to gfm. This stands for GitHub flavoured markdown.
+
+Give it the title Assignment 1.
+
+Copy and paste the question you added to the README file to this document. Leave the default code chunks in the file for now. Save it as DATA_3101_assignment1. Save and render the file. Commit and push both the .qmd and .md file to GitHub.
+
+### R Script
+
+Go to File -\> New File -\> R Script and create a new R Script file. Save it as dplyr_flight_example.R
+
+This is the file we'll start working with in the next lecture.
