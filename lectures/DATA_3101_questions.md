@@ -1,7 +1,63 @@
 Git & GitHub catchup
 ================
 
-# Questions from Assignment 1:
+## 2025 Questions from Assignment 1:
+
+1.  \*\*What exactly is Git? I mean obviously we’re working with it,
+    it’s some sort of way to share code around in one neat spot. We’re
+    working with GitHub here, but I know GitLab exists too. Are they the
+    same thing? Is “Git” just like a general term for this type of
+    platform? And if “Git” is just the name for this type of
+    collaborative space, why did the call it “Git”? It’s a pretty funny
+    name!
+
+I’d also be curious to know where the Git terminology comes from (push,
+pull, commit, whatever else). To me, they’re not the most intuitive
+terms for what they actually mean, so I wonder if there’s a good reason
+for the use of these terms.\*\*
+
+This is a great question. Keep asking clarifying conceptual questions so
+that this isn’t us:
+
+<figure>
+<img src="https://imgs.xkcd.com/comics/git.png" alt="(xkcd)" />
+<figcaption aria-hidden="true">(xkcd)</figcaption>
+</figure>
+
+**Git** is a version control system. It was designed to work for code,
+but can be used to track changes in any text-based files. It gives us
+structure to better understand the order and authors of changes to a
+file. Imagine the messiest folder of Word documents you’ve ever seen -
+that is the problem we’re trying to prevent.
+
+**Git** is a system that we’ve now installed on your computer. You can
+use Git from the terminal or shell to track changes in your files. One
+of the types of projects you can create in RStudio is a version control
+project, using Git. When you do this, a Git pane appears in your RStudio
+interface with some of the most common commands, like commit, push, and
+pull. We can do more advanced work with Git from the terminal/shell or
+by installing a Git client. We might do that for the CEWIL project.
+
+**GitHub** is a hosting service for Git-based projects. **GitLab** and
+**BitBucket** are two other hosting options. GitHub is the most widely
+used hosting service for open source projects, which is a bit ironic
+since it was acquired by Microsoft in 2018 (more on that soon). The
+advantages of using GitHub include making projects easily findable and
+shareable. But even more than that, GitHub makes it easy for people to
+contribute to projects, report problems, and ask questions.
+
+The name “Git” has lots of stories attached to it! Linus Torvalds wrote
+about it in the [initial
+revision](https://github.com/git/git/blob/e83c5163316f89bfbde7d9ab23ca2e25604af290/README),
+which is aptly available on GitHub. For a general history of Git, which
+provides some background on why Linus Torvalds was grumpy about solving
+this problem, check out the [Wikipedia
+article](https://en.wikipedia.org/wiki/Git). For a more technical
+history, published 20 years after the development of Git, read this [Q&A
+with Linus
+Torvalds](https://github.blog/open-source/git/git-turns-20-a-qa-with-linus-torvalds/).
+
+## 2024 Questions from Assignment 1:
 
 1.  **What are the differences between GitHub, GitLab and BitBucket?
     When would we use each one or are they all essentially do the same
