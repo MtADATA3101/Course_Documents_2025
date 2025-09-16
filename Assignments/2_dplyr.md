@@ -14,13 +14,11 @@ Elizabeth Stregger
 
 ### Assignment:
 
-At the beginning of class on September 18, create a new R script file or
-R Notebook.
+In class on Sep. 18, open the file dplyr_flight_example.R
 
 Code along with Elizabeth to practice using dplyr functions.
 
-Save the file with a descriptive name including the term dplyr. Push it
-to your repository.
+Save the file, commit it, and push it to your GitHub repository.
 
 ### Ideas for A range work:
 
