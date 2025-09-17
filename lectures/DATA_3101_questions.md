@@ -61,6 +61,32 @@ names (Blau, 2024). You can dig into that if you’re curious - but I
 think the main thing here is that there is a lot of jargon and lore in
 this history!
 
+2.  **Can anyone with the token generated commit to my GitHub project?
+    What would it take for someone to hijack your project? (and with
+    version control, can the damage be minimized?)**
+
+Your personal access token is like a password. Someone with access to
+your personal access token could read and write to your class GitHub
+repository. If this happened, we would be able to undo the changes to
+the last commit actually made by you. Some of the approaches to look at
+include [restore](https://git-scm.com/docs/git-reset) or the methods
+shown in [data
+recovery](https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery).
+Since I’m the only admin in the organization, nobody else is able to
+fully delete this repository.
+
+GitHub has quite a few recommendations on [improving your personal
+access token
+security](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#about-personal-access-tokens),
+including using GitHub CLI, creating fine-grained tokens, and regularly
+reviewing and deleting tokens.
+
+We set up our connection to these GitHub repositories using the HTTPS
+protocol. A more secure approach is to use SSH keys. Bryan covers the
+[difference between HTTPS and
+SSH](https://happygitwithr.com/https-pat#https-vs-ssh) in Happy Git and
+GitHub for the UseR.
+
 ## 2024 Questions from Assignment 1:
 
 1.  **What are the differences between GitHub, GitLab and BitBucket?
