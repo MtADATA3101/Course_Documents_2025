@@ -87,6 +87,29 @@ protocol. A more secure approach is to use SSH keys. Bryan covers the
 SSH](https://happygitwithr.com/https-pat#https-vs-ssh) in Happy Git and
 GitHub for the UseR.
 
+3.  **What kind of applications is Git used for? Or how does git work on
+    a technical level? It seems to work sorta like python at least
+    coding wise though I could be wrong**
+
+Git is version control software. It is a free and open source tool. Git
+uses commands to manage information about the versions (these commands
+are a bit like functions used in Python or R). You can use Git from the
+command line in your shell or terminal or it can be integrated into
+another piece of software like RStudio (again, like using R in RStudio
+or Python in a Jupyter Notebook).
+
+The difference is that Git only works for managing the files, not for
+solving a wide range of programming tasks. It was designed to track
+changes to code that would be created using Python or R.
+
+Here are some additional resources about Git at increasing levels of
+technicality: - [GitHub Docs: About
+Git](https://docs.github.com/en/get-started/using-git/about-git) -
+[Getting Started - What is
+Git?](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+from [Pro Git Book by Scott Chacon and Ben Straub
+(2014)](https://git-scm.com/book/en/v2)
+
 ## 2024 Questions from Assignment 1:
 
 1.  **What are the differences between GitHub, GitLab and BitBucket?
