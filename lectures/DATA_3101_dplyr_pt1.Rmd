@@ -55,9 +55,9 @@ We'll be using a dataset of flights departing from New York City in 2013. This d
 
 This lecture is based on [Chapter 3](https://r4ds.hadley.nz/data-transform) of R for Data Science.
 
-We'll start by installing the necessary packages in the console and then load the libraries in the code chunk.
+We'll start by creating a new R script file called dplyr_flight_example.R, installing the necessary packages in the console and then loading the libraries in the R script file.
 
-You do not need to install the packages every time you open R, which is the reason you install them in the Console. You also do not want to include them in R script files that others will use. If you have not installed the package already, attempting to load the library will give you error text in this format:
+You do not need to install the packages every time you open RStudio, which is the reason you install them in the Console. You also do not want to include them in R script files that others will use. If you have not installed the package already, attempting to load the library will give you error text in this format:
 
 Error in library(packagename) : there is no package called 'packagename'
 
@@ -73,9 +73,7 @@ Note the difference in usage of quotation marks!
 
 These are the packages we'll be using in this session:
 
--   tidyverse
-
--   dplyr
+-   tidyverse, which includes dplyr
 
 -   nycflights13
 
@@ -103,6 +101,7 @@ Here are a few ways you can look at a data frame:
 
 ```{r examine flights dataframe}
 
+
 ```
 
 # General dplyr function commonalities:
@@ -113,7 +112,9 @@ Subsequent arguments describe which columns to operate on using the variable nam
 
 The output is always a new data frame.
 
-Often we'll need to combine multiple functions, using the pipe %\>%. One way to read the pipe is to think of it as "and then." We can start using the pipe with a single function, too.
+Often we'll need to combine multiple functions, using the pipe (%\>%). One way to read the pipe is to think of it as "and then." We can start using the pipe with a single function, too.
+
+Let's change the pipe in our RStudio project to the native pipe, \|\>, which is used in the R for Data Science book. Go to Tools, Global Options, Code, and then check the box next to "use native pipe operator." Click ok.
 
 dplyr functions never modify the inputs. If you want to save the new data frame for later, you assign it to a new object using the assignment operator (\<-). Assignment operator shortcuts:
 
