@@ -1,7 +1,7 @@
 ---
 title: "dplyr part 2"
 author: "Elizabeth Stregger"
-date: "2024-09-23"
+date: "2025-09-23"
 output: github_document
 ---
 
@@ -83,8 +83,6 @@ The Tidyverse package includes these core packages:
 
 -   forcats (working with factors)
 
-That confirms that we don't need to load both tidyverse and dplyr.
-
 ```{r load libraries}
 
 ```
@@ -95,15 +93,15 @@ That confirms that we don't need to load both tidyverse and dplyr.
 
 Mutate adds new columns calculated from the existing columns. We'll start with some basic calculations.
 
-**Question: How much time did the flight make up in the air? (Create a new column called gain.)**
+**Question: How much time did the flights make up in the air? (Create a new column called gain.)**
 
 ```{r mutate gain}
 
 ```
 
-You can add more than one column using mutate. You can also control where the columns are created using .before and .after (or relocate, which we'll cover today). You can also use the argument .keep = "used" to only keep the columns used in the calculation or created by mutate.
+You can add more than one column using mutate. You can control where the columns are created using .before and .after (or relocate, which we'll cover today). You can also use the argument .keep = "used" to only keep the columns used in the calculation or created by mutate.
 
-**Question/Task: Create a new tibble called flights_delay_gain. Add columns for gain, speed in hours, and gain per hour. Only keep the columns used or created in this task.**
+**Question/Task: Create a new dataframe called flights_delay_gain. Add columns for gain, hours, and gain per hour. Only keep the columns used or created in this task.**
 
 ```{r create tibble for delay gain}
 
@@ -154,7 +152,7 @@ You can use relocate to change the order of the columns (for example: important 
 
 You can also use .before and .after to move them.
 
-**Task: Relocate time_hour from the end of the tibble to the beginning.**
+**Task: Relocate time_hour from the end of the dataframe to the beginning.**
 
 ```{r relocate}
 
@@ -185,7 +183,7 @@ We've covered examples of data transformation on rows using filter(), arrange(),
 
 ```
 
-Let's consider what this would like with the pipe. Convert to nesting:
+Let's consider what this would like without the pipe. Convert to nesting:
 
 ```{r nesting}
 
@@ -245,7 +243,7 @@ The slice function allows you to extract specific rows in each group:
 
 -   slice_sample(n = ): random row/rows
 
-**Question: What was the longest arrival delay for each month? Create a new tibble called flights_max_delay_month**
+**Question: What was the longest arrival delay for each month?**
 
 ```{r flights_max_delay_month}
 
@@ -253,10 +251,11 @@ The slice function allows you to extract specific rows in each group:
 
 **Groups: Ungroup()**
 
-You will often want to ungroup your data after a calculation.
+Group_by() and mutate() are often used together to add a summary statistic to a dataset. You will usually want to ungroup your data after a calculation to reduce the likelihood of miscalculation later.
 
-**Question: Group by month, add an avg_monthly_delay calculation, and ungroup**
+**Question: Group by month, add an avg_monthly_delay calculation, and test another calculation with and without ungrouping**
 
 ```{r ungroup}
+
 
 ```
