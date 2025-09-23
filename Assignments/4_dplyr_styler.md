@@ -16,9 +16,9 @@ Assignment 4
 
 #### Part 1: Update your live coding and submit to GitHub
 
-At the beginning of class on Sep. 24, open a new R script file. At the
-end of class, save it with a descriptive file name, commit it, and
-push it to your GitHub repository.
+At the beginning of class on Sep. 23, make sure you have saved dplyr_flight_example.R and pushed it to GitHub. 
+
+At the end of class, commit it again, and push it to your GitHub repository.
 
 #### Part 2: Install styler and apply it to your dplyr file
 
@@ -26,9 +26,8 @@ push it to your GitHub repository.
 package to format R code. This is like a style guide, and you can adapt
 it.
 
-Open your dplyr file in RStudio and install styler. Follow the
-instructions in the screenshot at the styler link to use the Addin to
-style your dplyr file. Save your file again without changing the file
+Open your dplyr_flight_example.R file in RStudio and install styler. Follow the instructions in the screenshot at the styler link to use the Addin to
+style your dplyr file. Save your file again with the same file
 name, commit it, and push it to your GitHub repository.
 
 #### Part 3: Describe changes to your file
@@ -36,12 +35,14 @@ name, commit it, and push it to your GitHub repository.
 Go to your personal repository on GitHub. Look at the history of your
 file. Did applying styler make any changes to your file?
 
-Open your dplyr assignment file. Add a brief reflection on the changes
+Create a new Quarto file called assignment_3_dplyr.qmd. Edit the output format to gfm so that it renders to github-flavoured markdown.
+
+Add a brief reflection on the changes
 to your file. Did applying styler make any changes to your coding? Did
 you accidentally change the name of your file and lose your history? How
 have these first two sessions of live coding in R been for you (in terms
-of pace, the textbook, questions, etc.)? Is there anything that I can do
-to improve your experience?
+of pace, the textbook, questions, etc.)? Is there anything that I can do to improve your experience?
 
-Save your file again without changing the file name, commit it, and push
-it your GitHub repository.
+Save your qmd file, render it, and commit it both the qmd and md files to your GitHub repository.
+
+Create a new GitHub issue and assign it to estregger to let me know that you have completed the assignment.
