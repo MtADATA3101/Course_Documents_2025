@@ -1,7 +1,8 @@
 ---
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
+output: pdf_document
 ---
 
 # Data 3101 Syllabus
@@ -141,7 +142,7 @@ Western Libraries. <https://doi.org/10.5206/OWNV1575>
 
 #### Assignment 4:
 
--   Update code from DPLYR live-coding, using styler (due Sep. 26)
+-   [DPLYR part 2, with styler (due Sep. 26)](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/Assignments/4_dplyr_styler.md)
 
 ## Week 5 (Sep. 30 & Oct. 2)
 
