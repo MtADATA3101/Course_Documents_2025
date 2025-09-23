@@ -1,0 +1,29 @@
+# CEWIL Glossary
+
+
+## Organizations
+
+- CRKN
+- Digital Research Alliance of Canada
+- DataCite Canada Consortium
+- CrossRef
+- LAC
+- CPIDAC
+
+## Persistent Identifiers
+
+- PID
+- ORCID
+- DOI
+- ISSN
+
+## Concepts
+
+- Open Access
+- Open Source
+- Metadata
+- License (as a verb, providing access to ejournals, databases, etc)
+- Creative Commons License
+- Trustworthy Digital Repository (TDR)
+- COUNTER usage statistics
+- Peer review
