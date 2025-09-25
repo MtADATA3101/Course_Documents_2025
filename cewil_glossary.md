@@ -23,7 +23,7 @@
 - Open Source
 - Metadata
 - License (as a verb, providing access to ejournals, databases, etc)
-- Creative Commons License
+- Creative Commons License (A way for individuals or organizations to grant permission to others to use their creative works under copyright law. These licenses can be applied to a creative work with or without certain restrictions, depending on the type of license (e.g. required attribution to the creator, adaptation licensed under same terms as original, for noncommercial purposes only, etc.)) source: [Creative Commons](https://creativecommons.org/share-your-work/cclicenses/)
 - Trustworthy Digital Repository (TDR)
 - COUNTER usage statistics
 - Peer review
