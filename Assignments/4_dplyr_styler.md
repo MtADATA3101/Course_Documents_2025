@@ -35,7 +35,7 @@ name, commit it, and push it to your GitHub repository.
 Go to your personal repository on GitHub. Look at the history of your
 file. Did applying styler make any changes to your file?
 
-Create a new Quarto file called assignment_3_dplyr.qmd. Edit the output format to gfm so that it renders to github-flavoured markdown.
+Create a new Quarto file called assignment_4_dplyr.qmd. Edit the output format to gfm so that it renders to github-flavoured markdown.
 
 Add a brief reflection on the changes
 to your file. Did applying styler make any changes to your coding? Did
