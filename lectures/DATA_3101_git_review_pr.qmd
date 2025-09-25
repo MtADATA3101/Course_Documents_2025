@@ -1,0 +1,59 @@
+---
+title: "Git: Review and more skills"
+format: gfm
+editor: visual
+---
+
+## Push
+
+Everyone in the class has now pushed from their local repository on their computer (the main branch) to the remote repository on GitHub (origin).
+
+Reminder of what should be there:
+
+-   README file, created when I made your repository. You added assignment 1 to it. After creating DATA_3101_assignment_1.qmd, please delete your assignment 1 question from the README file, save it, commit it, and push it to GitHub.
+
+-   DATA_3101_assignment_1.qmd, created in class on Sep. 16. If you need to review this, watch the [Sep. 16 recording](https://mountallison.sharepoint.com/sites/25FA_DATA_3101_A/Shared%20Documents/General/Recordings/Sep.%2016-20250916_095854-Meeting%20Recording.mp4?web=1&referrer=Teams.TEAMS-ELECTRON&referrerScenario=MeetingChicletGetLink.view) starting at around 1h 16 min.
+
+-   DATA_3101_assignment_1.md, created by changing the output format in the quarto document to gfm, github-flavoured markdown, and rendering the document. This was covered on Sep. 16 as well. One student mentioned that they needed to install the rmarkdown package to create this file. Does anyone need help with this?
+
+-   dplyr_flight_example.R was created in class on Sep. 18. The lecture notes are available in [GitHub](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/lectures/DATA_3101_dplyr_pt1.md). The lecture recording is available on [Teams](https://mountallison.sharepoint.com/sites/25FA_DATA_3101_A/Shared%20Documents/General/Recordings/Sep%2018%20-%20dplyr-20250918_095829-Meeting%20Recording.mp4?web=1&referrer=Teams.TEAMS-ELECTRON&referrerScenario=MeetingChicletGetLink.view). This is the assignment file for [Assignment 2](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/Assignments/2_dplyr.md). Ideally, you saved, committed, and pushed this file to GitHub on Sep. 18 or the beginning of our second class on dplyr on Sep. 23. We continued our live coding with dplyr lecture 2, available on [GitHub](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/lectures/DATA_3101_dplyr_pt2.md) (notes) and [Teams](https://mountallison.sharepoint.com/sites/25FA_DATA_3101_A/Shared%20Documents/General/Recordings/Sep%2023%20-%20dplyr%20part%202-20250923_095922-Meeting%20Recording%201.mp4?web=1&referrer=Teams.TEAMS-ELECTRON&referrerScenario=MeetingChicletGetLink.view) (recording). At the end of the class, I asked you to save, commit, and push this file again. When we look at the file in GitHub, we should see more some file history. If you saved it with a different filename, we'll have one more chance today to practice this skill, in [Assignment 4](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/Assignments/4_dplyr_styler.md).
+
+On the first day, when you created the RStudio project, you cloned the origin repository to your computer and made the main branch.
+
+Since then, you've been working on your own. All the commits have been made on your computer (main branch) and pushed to GitHub (the remote branch).
+
+In most version control projects, you'll be working with other people. We're going to move on to some of those scenarios now.
+
+## Pull
+
+Whenever you open a shared repository to work on it, pull before you start work. This pulls any remote changes into your local repository.
+
+I'll ask Sabrina, who has write permissions to my student repository, to make some changes. I need to pull these into repository.
+
+Next we'll show you what happens if I don't pull before I start editing.
+
+### Your task
+
+Working with someone in a repository where you both have write permissions:
+
+-   Elizabeth will add their response to your question in your DATA_3101_assignment_1.qmd file.
+
+-   Then you'll delete the extra code chunks in the file.
+
+-   To do this, you'll need to start getting used to git pull.
+
+-   If we create a conflict, we'll have to use git merge. (Don't worry, Sabrina and I will demonstrate this process.)
+
+## Pull Request
+
+Contributing to a repository where you don't have write permissions:
+
+-   In [Assignment 3](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/Assignments/3_pull_request.md) you'll add to a shared document in the Course_Documents_2025 repository.
+
+-   You don't have write access to this repository, so you'll be learning how to make a pull request instead.
+
+-   We can do this from within RStudio with usethis. There is an example vignette for [Pull request helpers](https://usethis.r-lib.org/articles/pr-functions.html).
+
+-   However, when we work with CRKN on the CEWIL project, they'd like us to use GitHub Desktop. We're going to set up GitHub Desktop for this example as part of Assignment 3.
+
+## 
