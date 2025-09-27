@@ -3,27 +3,28 @@
 
 ## Organizations
 
-- CRKN
+- CRKN - Canadian Research Knowledge Network
 - Digital Research Alliance of Canada
 - DataCite Canada Consortium
 - CrossRef
 - LAC
-- CPIDAC
+- CPIDAC - canadian Persistent Identifier Advisory Committee
 
 ## Persistent Identifiers
 
-- PID
-- ORCID
-- DOI
+- PID - the anchors that facilitate links between related pieces of information
+- ORCID 
+- DOI - Digital Object identifiers
 - ISSN
 
 ## Concepts
 
-- Open Access
+- Open Access -
 - Open Source
-- Metadata
+- Metadata - publications and datasets
 - License (as a verb, providing access to ejournals, databases, etc)
 - Creative Commons License
 - Trustworthy Digital Repository (TDR)
 - COUNTER usage statistics
 - Peer review
+
