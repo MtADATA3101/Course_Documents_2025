@@ -3,7 +3,7 @@
 
 ## Assignment 3
 
-Due: October 2, 2025
+Due: October 3, 2025
 
 ## Purpose
 

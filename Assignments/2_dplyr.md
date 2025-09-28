@@ -3,7 +3,7 @@ Assignment 2: DPLYR live-coding & data transformations
 Elizabeth Stregger
 2025-09-01
 
-## Due: September 19, 2025
+## Due: September 19, 2025. Can be submitted up to Oct. 3, 2025 without late penalty.
 
 ### Purpose:
 

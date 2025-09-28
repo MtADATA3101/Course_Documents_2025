@@ -1,7 +1,7 @@
 Assignment 4
 ================
 
-## Update code from DPLYR live-coding, using styler (due Sep. 26)
+## Update code from DPLYR live-coding, using styler (due Sep. 26, can be submitted up to Oct. 3 without late penalty)
 
 ### Purpose:
 
