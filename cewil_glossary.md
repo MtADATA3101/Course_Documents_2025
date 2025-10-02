@@ -13,9 +13,12 @@
 ## Persistent Identifiers
 
 - PID
-- ORCID
-- DOI
-- ISSN
+- ORCID 
+- DOI  
+- ISSN = stands for international standard serial number,
+it is an 8 digit number that is specific to publications (like journals and other serial publications).
+Using ISSN enables tracking  for previous names, publishers and other history.
+https://ec-europa-eu.libguides.com/identifiers/objects/issn
 
 ## Concepts
 
