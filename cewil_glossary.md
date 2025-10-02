@@ -26,9 +26,9 @@
 - Creative Commons License: "A public copyright license that allows free distribution of a copyrighted work, while letting the creator specify how others can use it."
 - Trustworthy Digital Repository (TDR): "A digital archive that is reliable and certified to preserve and provide long-term access to valuable digital assets."
 - COUNTER usage statistics: "A standardized, project-counting standard that provides consistent and comparable usage reports for online resources."
-- Peer review: "The process where experts in a field evaluate a research article's quality and validity before it is published."
+- Peer review: "The process where experts in a field evaluate a research article's quality and validity before it is published." 
 
 - Terms:
 
-Work-integrated learning: WIL is a model and process of experiential education which formally and intentionally integrates a student’s academic studies with learning in a workplace or practice setting. 
+"Work-integrated learning: WIL is a model and process of experiential education which formally and intentionally integrates a student’s academic studies with learning in a workplace or practice setting."
 (I got this here: https://cewilcanada.ca/CEWIL/CEWIL/About-Us/About.aspx?hkey=a6a9c3e4-d096-4353-b76d-74323727a95a)
