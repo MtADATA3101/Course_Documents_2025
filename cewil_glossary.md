@@ -33,6 +33,7 @@ https://ec-europa-eu.libguides.com/identifiers/objects/issn
 
 - Canadiana: Canadiana is essentially a massive repository containing heritage content about Canada that has been digitized. Thanks to Canadiana, it is made available free of charge and online to anybody who wants to use it. https://www.crkn-rcdr.ca/en/canadiana was used as a basis for information, and I also browsed the Canadiana website a bit as well.
 
-- Terms:
-
 Work-integrated learning: "WIL is a model and process of experiential education which formally and intentionally integrates a student’s academic studies with learning in a workplace or practice setting." [Source](https://cewilcanada.ca/CEWIL/CEWIL/About-Us/About.aspx?hkey=a6a9c3e4-d096-4353-b76d-74323727a95a)
+
+- Metadata: "Metadata is defined as a structured and descriptive information about data, offering context such as source, type, and relationships to other datasets." https://atlan.com/what-is-metadata/
+metadata gives us more information and context that can help us understand our data better or draw different conclusions of what is happening if we did not have the extra information
