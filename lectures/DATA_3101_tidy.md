@@ -1,10 +1,5 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
-# Data Tidying
+Data Tidying
+================
 
 # Tidy data Pt. 1
 
@@ -12,9 +7,9 @@ editor_options:
 
 The content for this week is based on:
 
--   Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023a). Data
-    tidying. In *R for Data Science* (2nd ed.).
-    <https://r4ds.hadley.nz/data-tidy>
+- Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023a). Data
+  tidying. In *R for Data Science* (2nd ed.).
+  <https://r4ds.hadley.nz/data-tidy>
 
 The same data can be organized in different ways. Often the way a
 researcher, a research tool, or an instrument gathers the data will not
@@ -28,10 +23,10 @@ In R, a dataset is tidy when:
 
 Why these rules?
 
--   general advantage to having a consistent data structure
+- general advantage to having a consistent data structure
 
--   placing variables in columns is particularly well suited to R
-    functions, which work with columns as vectors.
+- placing variables in columns is particularly well suited to R
+  functions, which work with columns as vectors.
 
 To get the data into tidy form, you need to figure out the underlying
 variables and observations. Sometimes you might need to ask the people
@@ -58,7 +53,7 @@ Parker, Katya; El, Nir; Buldo, Elena; MacCormack, Tyson, 2023,
 silver nanoparticle toxicity in fish: Intravascular exposure disrupts
 cardiac pacemaker function and inhibits Na+/K+-ATPase activity in heart,
 but not gill”, <https://doi.org/10.5683/SP3/FCDBBT>, Borealis, V1;
-Figure 3A.tab $$fileName$$, UNF:6:6Qrmtes/AAEkr3TwN3PVeA== $$fileUNF$$
+Figure 3A.tab \[fileName\], UNF:6:6Qrmtes/AAEkr3TwN3PVeA== \[fileUNF\]
 
 This is the data associated with the following paper:
 
@@ -71,46 +66,22 @@ and Physiology Part C: Toxicology & Pharmacology*, *277*, 109837.
 
 The README.txt file gives us a bit more context:
 
-```         
-File “Figure 3A” contains heart rate data for control brook trout and brook trout injected with 700 µg/kg nAgPVP
--   Column C contains heart rate data for brook trout prior to a sham injection (control) or an injection with 700 µg/kg nAgPVP (nAgPVP)
--   Column D contains heart rate data for brook trout 5 hours following a sham injection (control) or an injection with 700 µg/kg nAgPVP (nAgPVP)
--   Column E contains heart rate data for brook trout 10 hours following a sham injection (control) or an injection with 700 µg/kg nAgPVP (nAgPVP)
--   Column F contains heart rate data for brook trout 24 hours following a sham injection (control) or an injection with 700 µg/kg nAgPVP (nAgPVP)
-```
+    File “Figure 3A” contains heart rate data for control brook trout and brook trout injected with 700 µg/kg nAgPVP
+    -   Column C contains heart rate data for brook trout prior to a sham injection (control) or an injection with 700 µg/kg nAgPVP (nAgPVP)
+    -   Column D contains heart rate data for brook trout 5 hours following a sham injection (control) or an injection with 700 µg/kg nAgPVP (nAgPVP)
+    -   Column E contains heart rate data for brook trout 10 hours following a sham injection (control) or an injection with 700 µg/kg nAgPVP (nAgPVP)
+    -   Column F contains heart rate data for brook trout 24 hours following a sham injection (control) or an injection with 700 µg/kg nAgPVP (nAgPVP)
 
 #### **Tidy data: In-class task:**
 
 **Sketch a tidy data structure for this file in long format.**
 
-We’ll come back to this example next week, when we work on data import.
+We’ll come back to this example when we work on data import.
 
 ### Billboard data
 
 For now, we’ll use another dataset included in the tidyverse package
 called **billboard.**
-
-``` r
-library(tidyverse)
-```
-
-```         
-## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-## ✔ purrr     1.0.2     
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-```
-
-``` r
-?billboard
-View(billboard)
-```
 
 ### pivot_longer():
 
@@ -123,14 +94,12 @@ hour data in the Parker (2023) dataset.
 
 pivot_longer() has 3 key arguments:
 
--   cols: which columns need to be pivoted, i.e. which ones will change.
-    This argument uses the same syntax as select()
+- cols: which columns need to be pivoted, i.e. which ones will change.
+  This argument uses the same syntax as select()
 
--   names_to: gives a new name to the variable stored in the column
-    names
+- names_to: gives a new name to the variable stored in the column names
 
--   values_to: gives a new name to the variable stored in the cell
-    values
+- values_to: gives a new name to the variable stored in the cell values
 
 Now we have a much longer data frame. In either format, there were a lot
 of NA values for songs that were in the top 100 for less than 76 weeks.
@@ -153,8 +122,8 @@ In ggplot, you build visualization in layers.
 The first argument is the dataset (though we can also use the pipe to
 feed into ggplot).
 
-Next you give ggplot a mapping, which called the aesthetics of the plot.
-This could include x and y and groups.
+Next you give ggplot a mapping, which is called the aesthetics of the
+plot. This could include x and y and groups.
 
 Then you define the geom: the geometric object that you want to
 represent your data. Examples include geom_line(), geom_boxplot(),
@@ -174,22 +143,17 @@ information in column names. Let’s look at who2, a dataset from the
 World Health Organization Global Tuberculosis report. Let’s also revisit
 our options for pivot_longer()
 
-``` r
-view(who2)
-?pivot_longer
-```
-
 All columns except country and year have three pieces of data encoded in
 the column header, separated by underscores:
 
--   method of diagnosis (rel = relapse, sn = negative pulmonary smear,
-    sp = positive pulmonary smear, ep = extrapulmonary)
+- method of diagnosis (rel = relapse, sn = negative pulmonary smear, sp
+  = positive pulmonary smear, ep = extrapulmonary)
 
--   sex (f = female, m = male)
+- sex (f = female, m = male)
 
--   age group (`014` = 0-14 yrs of age, `1524` = 15-24, `2534` = 25-34,
-    `3544` = 35-44 years of age, `4554` = 45-54, `5564` = 55-64, `65` =
-    65 years or older).
+- age group (`014` = 0-14 yrs of age, `1524` = 15-24, `2534` = 25-34,
+  `3544` = 35-44 years of age, `4554` = 45-54, `5564` = 55-64, `65` = 65
+  years or older).
 
 To make this data long, we’d be formatting it into 6 columns: country,
 year, diagnosis, sex, age group, and count.
@@ -199,12 +163,72 @@ year, diagnosis, sex, age group, and count.
 The column names sometimes include a mix of variable names and variable
 values.
 
-``` r
-view(household)
-?household
-```
-
 In this example we see two variables (date of birth and name) as well as
 the values of another variable (child).
 
 ### pivot_wider()
+
+Pivot wider creates columns and reduces rows - the opposite of
+pivot_longer(). The use case for pivot_wider() in the world of tidy data
+is to fix the problem of one observation being spread across multiple
+rows.
+
+In this case, we’re looking at survey results. Instead of seeing the
+full survey response from one organization in each row, the survey
+response is spread across six rows.
+
+Neither of these are great in terms of variable names. One carries no
+descriptive meaning and the other is a long text string including
+spaces. Think about what these would look like in a plot legend! We’ll
+come back to this. Remember that Costanzo (2023) suggested that we
+structure the data before we clean it.
+
+The structure of pivot_wider is the opposite of pivot_longer:
+
+- we provide the existing columns that define the values (values_from)
+
+- where the column names are coming from
+
+- which columns have values that identify the row
+
+Now we can work through some of the data cleaning and validation steps
+suggested by Costanzo (2023). In this case we could change the column
+names to something meaningful and check that the data types are correct.
+
+This is also where we’d want to create a data dictionary for a study in
+a README.txt file, in terms of Research Data Management.
+
+Let’s take a look at the survey to better understand the variables:
+[CAHPS for MIPS
+Survey](https://www.cms.gov/data-research/research/consumer-assessment-healthcare-providers-systems/cahps-mips)
+
+We could leave the column title as CAHPS_GRP_1, as the R4DS book does,
+or we could give it a somewhat meaningful name, like timeliness.
+
+The entry in the data dictionary could look like:
+
+CAHPS_GRP_1 = CAHPS for MIPS SSM: Getting Timely Care, Appointments, and
+Information, measured as a rate
+
+or
+
+timeliness = CAHPS_GRP_1 = CAHPS for MIPS SSM: Getting Timely Care,
+Appointments, and Information, measured as a rate
+
+Which would you use in a healthcare network where everyone knew the
+codes and acronyms? What about at an international conference where
+people aren’t familiar with this aspect of American health care?
+
+#### Data types in R
+
+- character: text
+
+- numeric or double: can include decimal points
+
+- logical: True and False
+
+- integer: for integers
+
+- complex: complex numbers with imaginary parts
+
+- raw: bitstreams

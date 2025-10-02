@@ -55,16 +55,14 @@ File “Figure 3A” contains heart rate data for control brook trout and brook 
 
 **Sketch a tidy data structure for this file in long format.**
 
-We'll come back to this example next week, when we work on data import.
+We'll come back to this example when we work on data import.
 
 ### Billboard data
 
 For now, we'll use another dataset included in the tidyverse package called **billboard.**
 
 ```{r load library and look at billboard data}
-library(tidyverse)
-?billboard
-View(billboard)
+
 ```
 
 ### pivot_longer():
@@ -107,7 +105,7 @@ In ggplot, you build visualization in layers.
 
 The first argument is the dataset (though we can also use the pipe to feed into ggplot).
 
-Next you give ggplot a mapping, which called the aesthetics of the plot. This could include x and y and groups.
+Next you give ggplot a mapping, which is called the aesthetics of the plot. This could include x and y and groups.
 
 Then you define the geom: the geometric object that you want to represent your data. Examples include geom_line(), geom_boxplot(), geom_point().
 
@@ -122,8 +120,7 @@ ggplot() is one of the best things about R! There are so many things you can cus
 Our first example had one value in column names (wk1, wk2, wk 3....). It is also possible that the data frame might have multiple pieces in information in column names. Let's look at who2, a dataset from the World Health Organization Global Tuberculosis report. Let's also revisit our options for pivot_longer()
 
 ```{r view who2}
-view(who2)
-?pivot_longer
+
 ```
 
 All columns except country and year have three pieces of data encoded in the column header, separated by underscores:
@@ -145,13 +142,13 @@ To make this data long, we'd be formatting it into 6 columns: country, year, dia
 The column names sometimes include a mix of variable names and variable values.
 
 ```{r view household data}
-view(household)
-?household
+
 ```
 
 In this example we see two variables (date of birth and name) as well as the values of another variable (child).
 
 ```{r pivot variable names and values}
+
 
 ```
 
@@ -183,7 +180,7 @@ The structure of pivot_wider is the opposite of pivot_longer:
 
 ```
 
-Now we can work through some of the data cleaning and validation steps suggested by Costanzo (2023). In this case we can change the column names to something meaningful and check that the data types are correct.
+Now we can work through some of the data cleaning and validation steps suggested by Costanzo (2023). In this case we could change the column names to something meaningful and check that the data types are correct.
 
 This is also where we'd want to create a data dictionary for a study in a README.txt file, in terms of Research Data Management.
 
@@ -199,7 +196,7 @@ or
 
 timeliness = CAHPS_GRP_1 = CAHPS for MIPS SSM: Getting Timely Care, Appointments, and Information, measured as a rate
 
-Which would you use in a healthcare network where everyone new the codes and acronyms? What about at an international conference where people aren't familiar with this aspect of American health care?
+Which would you use in a healthcare network where everyone knew the codes and acronyms? What about at an international conference where people aren't familiar with this aspect of American health care?
 
 ```{r}
 
