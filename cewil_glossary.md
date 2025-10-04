@@ -12,7 +12,8 @@
 
 ## Persistent Identifiers
 
-- PID
+- PID - "a long-lasting digital links to research like journals, researchers or institutions", usually used with digital objects that are accessiblle over the internet 
+reference - https://www.crkn-rcdr.ca/en/persistent-identifiers 
 - ORCID
 - DOI
 - ISSN
