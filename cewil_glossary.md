@@ -10,6 +10,10 @@
 - LAC
 - CPIDAC
 
+DataCite description:
+DataCite is non-profit organization that supports Canadian institutions in managing and providing digital object identifiers. It is co-managed by the CRKN and the Digital Research Alliance of Canada. Administration, licensing and financial services are provided by the CRKN and the Digital Research Alliance provides technical support and practices guidance.
+Cite used for information: DataCite Canada Consortium
+
 ## Persistent Identifiers
 
 - PID
