@@ -78,7 +78,8 @@ These are the packages we'll be using in this session:
 -   nycflights13
 
 ```{r load libraries}
-
+library(tidyverse)
+library(nycflights13)
 ```
 
 # Exploring the flights dataframe
@@ -162,7 +163,7 @@ You can also combine conditions:
 **Check-in question: What columns do we need to use to set our conditions?**
 
 ```{r filter date}
-
+flights |> 
 ```
 
 # Arrange()
