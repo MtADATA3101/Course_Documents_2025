@@ -27,5 +27,5 @@
 - Trustworthy Digital Repository (TDR)
 - COUNTER usage statistics
 - Peer review
-
 - Canadiana (not quite sure what it fits under so put it down here). Canadiana is essentially a massive repository containing heritage content about Canada that has been digitized. Thanks to Canadiana, it is made available free of charge and online to anybody who wants to use it. https://www.crkn-rcdr.ca/en/canadiana was used as a basis for information, and I also browsed the Canadiana website a bit as well.
+- Digitization Services ("A digitization service is a solution that helps businesses convert physical data, such as paper documents, technical drawings, or archived files, into digital formats that can be managed, retrieved, and processed by software systems.") Source for the definition: https://digi-texx.com/technology/what-is-digitization-service-common-types-of-digitization-services/#:~:text=A%20digitization%20service%20is%20a,and%20processed%20by%20software%20systems. I found the word Digitization Services in this website: https://www.crkn-rcdr.ca/en/digitization-services
