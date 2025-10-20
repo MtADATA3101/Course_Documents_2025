@@ -1,0 +1,83 @@
+---
+title: "CRKN Setup"
+format: gfm
+editor: visual
+---
+
+## Assignment 6: Udemy course & CRKN setup
+
+Due: Friday, October 14, 2025 at 11:59 p.m.
+
+Purpose:
+
+1.  Demonstrate preparedness for CRKN CEWIL project
+
+2.  Create a persistent identifier for yourself (ORCID) and populate it with relevant information.
+
+3.  Learn more about Quarto markdown and GitHub workflows
+
+## Part 1: Udemy Course
+
+Complete the Udemy course you selected as part of the Canadian Research Knowledge Network (CRKN) CEWIL project.
+
+### Helpful links:
+
+[Certificates of Completion: Frequently Asked Questions](Certificates%20of%20Completion:%20Frequently%20Asked%20Questions)
+
+[How to Download Your Certificate of Completion (on a Browser)](How%20to%20Download%20Your%20Certificate%20of%20Completion%20(on%20a%20Browser))
+
+### Submitting your work:
+
+Upload the certificate of completion in PDF format to your student repository with a file name in the format: lastname_udemy_certificate.pdf
+
+To do this, you'll need to copy the file into the folder you set up for your student repository on your computer. Then stage it, commit it, and push it to GitHub.
+
+## Part 2: ORCID
+
+Create an [ORCID](https://orcid.org/) if you have not already done so.
+
+At a minimum, verify your MtA email address and add your education.
+
+### A-level work: more detail
+
+-   professional activities and service (this could include club / association membership, volunteer work)
+
+-   employment information (TA/RA positions, internships, university employment)
+
+-   research works (conference posters or papers)
+
+-   scholarships or grants
+
+### Helpful links:
+
+[Adding information to ORCID](https://support.orcid.org/hc/en-us/articles/360006896894-How-do-I-add-information-to-my-record)
+
+## Part 3: CRKN ORCID Data Visualization Ideas
+
+After our classes on Tuesday October 21 and Thursday October 23, you should be able to identify some code corrections or ideas for improving the [CRKN ORCID Data Visualization](https://github.com/crkn-rcdr/ORCID-Data-Visualization) project.
+
+Add at least one idea to the CRKN [Bug Tracker](https://github.com/orgs/crkn-rcdr/projects/21) in the To Triage section. Include the following elements:
+
+-   Description of the bug/issue
+
+-   Steps to replicate
+
+<!-- -->
+
+-   Screenshots
+
+## Submitting your work:
+
+Create a new Quarto document with the output format gfm. Save it as crkn_preparation.qmd
+
+Consult [Quarto markdown basics](https://quarto.org/docs/authoring/markdown-basics.html) and use markdown to style your work:
+
+-   Add headings for Part 2 and Part 3 of the assignment
+-   Add links to your work:
+    -   ORCID profile
+    -   Bug tracker link(s) in CRKN's GitHub
+-   Add any questions you have about ORCID or the CRKN / CEWIL project.
+
+Save and render your file to a .md file. Stage both files, commit them, and push them to GitHub.
+
+Create an issue in your repository named Assignment 6 and assign it to estregger.
