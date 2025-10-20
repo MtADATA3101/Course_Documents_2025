@@ -6,7 +6,7 @@ editor: visual
 
 ## Assignment 6: Udemy course & CRKN setup
 
-Due: Friday, October 14, 2025 at 11:59 p.m.
+Due: Friday, October 24, 2025 at 11:59 p.m.
 
 Purpose:
 
