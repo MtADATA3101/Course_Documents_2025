@@ -10,6 +10,13 @@ Get Data
   in Moodle. I am not posting these publicly because they are not my own
   content.
 
+- Sabrina has created a Wiki in Moodle with helpful links
+
+- Udemy courses: You can request access to another Udemy course if you
+  would like to learn more data skills. There is room in this part of
+  the grant. I’ll fill the requests in the order I receive them. Email
+  me at estregger@mta.ca with a link to the class you’d like to take.
+
 - CEWIL stipend expected in your accounts around Oct. 29
 
 - Plan for next few classes (flexible, depending on CRKN involvement):
@@ -263,6 +270,14 @@ See [R4DS Chapter 24: Web
 Scraping](https://r4ds.hadley.nz/webscraping.html) to learn more about
 working with **rvest** and **polite.**
 
+Web scraping is not a feasible method for the CRKN ORCID Data
+Visualization project, so we’ll skip ahead to working with Application
+Programming Interfaces this year.
+
+If you’d like to learn more about web scraping, or need to do some web
+scraping for another project, make an appointment and I’ll be happy to
+help!
+
 # Working with APIs
 
 Four of the students in this class took a Udemy course on working on
@@ -270,6 +285,8 @@ APIs:
 
 [API and Web Service
 Introduction](https://www.udemy.com/course/api-and-web-service-introduction/?couponCode=MT251022G3).
+
+Can you give us a short description of how APIs work?
 
 For the CRKN CEWIL project, we’ll be using R packages that were
 developed to work with open APIs. We might need to consult the
