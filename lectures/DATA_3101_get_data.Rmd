@@ -1,0 +1,259 @@
+---
+title: "Get Data"
+output: github_document
+---
+
+# Announcements
+
+-   [Assignment 6](./Assignments/6_crkn_setup.qmd) is posted in Moodle and in GitHub. It is due on Friday, October 24 at 11:59 p.m.
+
+-   Presentations by CRKN are available as recordings and PowerPoint files in Moodle. I am not posting these publicly because they are not my own content.
+
+-   CEWIL stipend expected in your accounts around Oct. 29
+
+-   Plan for next few classes (flexible, depending on CRKN involvement): short lecture/demo on R, followed by in-class work time
+
+# Short Lecture 1: Data import in R
+
+So far we’ve only worked with data provided from R packages (including data from nycflights13, ….). This is a good way to get started with data science tools like dplyr and to introduce data tidying ideas like lengthening and widening data.
+
+Usually, you’re going to be working with your own data, or reusing data created by someone else. This means we need to practice getting data into R.
+
+Overview of ways to get your data into RStudio:
+
+1.  Data import of tabular data files and spreadsheets (.csv, .xlsx, Google Sheets):
+    -   See [R4DS Chapter 7: Data Import](https://r4ds.hadley.nz/data-import.html) to learn more about **readr**
+    -   See [R4DS Chapter 20: Spreadsheets](https://r4ds.hadley.nz/spreadsheets.html) to learn more about **readxl**, **writexl**, and **googlesheets4**
+2.  Web scraping to extract data from web pages:
+    -   See [R4DS Chapter 24: Web Scraping](https://r4ds.hadley.nz/webscraping.html) to learn more about working with **rvest** and **polite**
+3.  Use an API (Application Programming Interface) to retrieve data:
+    -   Luckily for us, some contributors have created R packages for working with permanent identifiers (PID), digital object identifiers (DOI), and other open metadata related to scholarly communications.
+
+# Data Import with readr
+
+readr parses a text file and returns a tibble. In other words, it parses a .csv or .tsv file in three steps:
+
+1.  Turns the rectangular data into a matrix of rows and columns
+2.  Tries to guess the data type in the column (character, integer, double, date, logical, factor)
+3.  Parses the data in each column into a vector of that type.
+
+```{r load tidyverse}
+library(tidyverse)
+?read_delim
+```
+
+## Example 1: Research data
+
+See [R4DS Chapter 7: Data Import](https://r4ds.hadley.nz/data-import.html) to learn more about **readr**
+
+The first file we'll read in is some research data from a deposit in [Borealis](https://borealisdata.ca/):
+
+Parker, Katya; El, Nir; Buldo, Elena; MacCormack, Tyson, 2023, “Replication Data for: Parker et al. Mechanisms of PVP-functionalized silver nanoparticle toxicity in fish: Intravascular exposure disrupts cardiac pacemaker function and inhibits Na+/K+-ATPase activity in heart, but not gill”, <https://doi.org/10.5683/SP3/FCDBBT>, Borealis, V1; Figure 3A.tab [fileName], UNF:6:6Qrmtes/AAEkr3TwN3PVeA== [fileUNF]
+
+Note for 2025: permanent identifiers connecting this dataset to related records
+
+-   DOI for dataset, registered through DataCite
+
+-   DOI for related article
+
+-   ORCID for Tyson MacCormack
+
+Borealis provides a download URL that we can use for data import:
+
+<https://borealisdata.ca/api/access/datafile/637561>
+
+**Question: From the Borealis record, what is the delimiter for this file? Will we use read_csv() or read_tsv() to import this data?**
+
+```{r read fish data}
+# read in file from Borealis, rename columns based on preview of data, specify that treatment has type "factor", skip the first row
+
+fish_data <- read_tsv("https://borealisdata.ca/api/access/datafile/637561",  
+      col_names = c("units", "treatment", "hour_0", "hour_1", "hour_5", "hour_10", "hour_24"), 
+      col_types = list(treatment = col_factor()), 
+    skip = 1, 
+    )
+```
+
+The dataset now shows up in our environment pane.
+
+We can now tidy the dataset by pivoting it, as we did with the billboard music data in the [tidy data class](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/lectures/DATA_3101_tidy.md).
+
+```{r tidy fish data}
+# Select all columns except units, create a new column for a sample id, pivot longer. Pivot all the columns except id and treatment. The values in the column names go to a new column we'll call hour, and the associated values go to a new column called heart_rate. Then we'll drop the NA values (the empty row), and use parse_number to strip out the other characters in the hour column.
+
+fish_tidy <- fish_data |>  
+  select(treatment:hour_24) |>  
+  mutate(id = row_number(), .before = 1) |>  
+  pivot_longer( 
+    cols=!(id:treatment), 
+    names_to = "hour", 
+    values_to = "heart_rate", 
+    values_drop_na = TRUE 
+    )|>  
+  mutate(hour = parse_number(hour) 
+  ) 
+```
+
+This is the general workflow you'll typically follow: import the data, then tidy it, then do your analysis and visualization.
+
+## Example 2: Statistics Canada
+
+To run this example yourself, you can download [data/2024_statscan_tech_adoption.xls](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/data/2024_statscan_tech_adoption.xls) from our class repository. Create a new folder in your repository called data. Move the downloaded file into your data folder.
+
+To use files on your computer, you need to understand a bit about [working directories](https://r4ds.hadley.nz/workflow-scripts.html#where-does-your-analysis-live) (not recommended for reproducibility reasons) and [relative and absolute paths](https://r4ds.hadley.nz/workflow-scripts.html#relative-and-absolute-paths). Hint: this is one of the improvements that could be made to the CRKN ORCID Data Visualization code.
+
+This is Excel file, so we need to load **readxl** and **writexl**. **readxl** is an example of a library that is not core Tidyverse, so we need to load the library explicitly, but we don't need to install a package. We will need to install and load **writexl**.
+
+See [R4DS Chapter 20: Spreadsheets](https://r4ds.hadley.nz/spreadsheets.html) to learn more about **readxl**, **writexl**, and **googlesheets4**
+
+```{r load readxl and test reading in our file}
+library(readxl)
+library(writexl)
+tech_adoption <- read_excel("../data/2024_statscan_tech_adoption.xls")
+```
+
+This is a mess!
+
+One thing to notice is that by default, RStudio has loaded the first sheet. We can specify the sheet in the read_excel() function.
+
+Another is that we have lots of rows that are helpful for creating a citation or noting the data quality, but not for analysis or visualization. We can specify the range of cells we want to import.
+
+We can add meaningful column names, using col_names.
+
+```{r reimport tech adoption data as separate sheets}
+tech_adoption_canada <- read_excel("../data/2024_statscan_tech_adoption.xls",
+  sheet = "Canada",
+  range = "A13:O79",
+  col_names = c("business_characteristics", "software_ai", "data_quality_1", "hardware_ai", "data_quality_2", "robotics", "data_quality_3", "task_automation", "data_quality_4", "cloud computing", "data_quality_5", "collaboration", "data_quality_6", "security_software", "data_quality_7")
+) |>
+  mutate(geography = "Canada", .after = "business_characteristics")
+
+tech_adoption_nb <- read_excel("../data/2024_statscan_tech_adoption.xls",
+  sheet = "New Brunswick",
+  range = "A13:O79",
+  col_names = c("business_characteristics", "software_ai", "data_quality_1", "hardware_ai", "data_quality_2", "robotics", "data_quality_3", "task_automation", "data_quality_4", "cloud computing", "data_quality_5", "collaboration", "data_quality_6", "security_software", "data_quality_7")
+) |>
+  mutate(geography = "New Brunswick", .after = "business_characteristics")
+
+# Hadley Wickham says that a good rule is that we don't want to type things out more than twice. If we were doing this for all the provinces, we'd consult the Program section of the book.
+
+# You can add these together using bind_rows(). Let's drop the data quality columns for this example.
+tech_adoption <- bind_rows(tech_adoption_canada, tech_adoption_nb)|>
+  select(!starts_with("data_quality"))
+
+```
+
+There is data in the column labels (type of technology), so to make this tidy we'd need to pivot it to long format.
+
+```{r}
+# Pivot to long format. Also parse geography, business characteristics, and technology to factors. This prepares us for grouping and visualization.
+
+tech_adoption_tidy <- tech_adoption |>
+  pivot_longer(
+    cols = !(business_characteristics:geography),
+    names_to = "technology",
+    values_to = "percent"
+  ) |>
+  mutate(
+    geography = parse_factor(geography),
+    business_characteristics = parse_factor(business_characteristics),
+    technology = parse_factor(technology)
+  )
+
+# Write to data directory
+write_xlsx(tech_adoption, path = "../data/tech_adoption_long.xls")
+```
+
+# Webscraping
+
+On your own time, you can download the notebook for the [2023 web scraping lecture](https://github.com/MtADATA3101/Course_Documents/blob/main/RCode/2023webscraping.Rmd).
+
+See [R4DS Chapter 24: Web Scraping](https://r4ds.hadley.nz/webscraping.html) to learn more about working with **rvest** and **polite.**
+
+# Working with APIs
+
+Four of the students in this class took a Udemy course on working on APIs:
+
+[API and Web Service Introduction](https://www.udemy.com/course/api-and-web-service-introduction/?couponCode=MT251022G3).
+
+For the CRKN CEWIL project, we'll be using R packages that were developed to work with open APIs. We might need to consult the documentation for the APIs or the packages.
+
+## rorcid: Interface to the 'Orcid.org' API
+
+-   Developed by Scott Chamberlain, the co-founder of [rOpenSci](https://ropensci.org/)
+
+-   Can get help for functions in RStudio
+
+-   Reference manual: [rorcid.html](https://cran.r-project.org/web/packages/rorcid/refman/rorcid.html), [rorcid.pdf](https://cran.r-project.org/web/packages/rorcid/rorcid.pdf)
+
+-   [GitHub repo for rorcid](https://github.com/ropensci-archive/rorcid) (archived)
+
+## ORCID API
+
+-   [ORCID Record Schema](https://info.orcid.org/documentation/integration-guide/orcid-record/)
+
+-   [Public API](https://info.orcid.org/what-is-orcid/services/public-api/)
+
+-   [ORCID APIs](https://github.com/ORCID/ORCID-Source/tree/main/orcid-api-web)
+
+-   [API Tutorials](https://info.orcid.org/documentation/api-tutorials/)
+
+-   [Tutorials for reading and writing to ORCID records](https://github.com/ORCID/ORCID-Source/tree/master/orcid-api-web/tutorial) 
+
+-   [Hands-on with the ORCID API](https://info.orcid.org/hands-on-with-the-orcid-api/) 
+
+-   [ORCID API v3.0 Guide](https://github.com/ORCID/orcid-model/tree/master/src/main/resources/record_3.0#orcid-api-v30-guide)
+
+-   [API Error Codes](https://github.com/ORCID/ORCID-Source/blob/master/orcid-api-web/tutorial/api_errors.md#list-of-error-codes-and-solutions)
+
+## rcrossref: Client for Various 'CrossRef' 'APIs'
+
+-   Developed by Scott Chamberlain, the co-founder of [rOpenSci](https://ropensci.org/)
+
+-   Can get help for functions in RStudio
+
+-   Reference manual: [rcrossref.html](https://cran.r-project.org/web/packages/rcrossref/refman/rcrossref.html), [rcrossref.pdf](https://cran.r-project.org/web/packages/rcrossref/rcrossref.pdf)
+
+-   [GitHub repository for rcrossref](https://github.com/ropensci/rcrossref) (Active, may be useful to look at issues or documentation)
+
+## CrossRef API
+
+-   Crossref API: <https://api.crossref.org/>
+
+## roadoi: Find Free Versions of Scholarly Publications via UnpaywallDeveloped by Najko Jahn
+
+-   Reference manual: [roadoi.html](https://cran.r-project.org/web/packages/roadoi/refman/roadoi.html), [roadoi.pdf](https://cran.r-project.org/web/packages/roadoi/roadoi.pdf)
+
+-   [GitHub repository for roadoi](https://github.com/ropensci/roadoi/) (Active, may be useful to look at issues or documentation)
+
+-   **Question: Is this package actually used in the code? I do not see the functions at a quick glance.**
+
+## Unpaywall API
+
+-   Unpaywall API: <https://unpaywall.org/products/api>
+
+## rdatacite: Client for the 'DataCite' API
+
+-   Developed by Scott Chamberlain, the co-founder of [rOpenSci](https://ropensci.org/)
+
+-   Can get help for functions in RStudio
+
+-   Reference manual: [rdatacite.html](https://cran.r-project.org/web/packages/rdatacite/refman/rdatacite.html), [rdatacite.pdf](https://cran.r-project.org/web/packages/rdatacite/rdatacite.pdf)
+
+-   [GitHub repository for rdatacite](https://github.com/ropensci/rdatacite) (Active, may be useful to look at issues or documentation)
+
+## DataCite API
+
+-   DataCite API: <https://support.datacite.org/docs/api>
+
+## geonames: Interface to the "Geonames" Spatial Query Web Service
+
+-   Created by Barry Rowlingson
+
+-   Reference manual: [geonames.html](https://cran.r-project.org/web/packages/geonames/refman/geonames.html), [geonames.pdf](https://cran.r-project.org/web/packages/geonames/geonames.pdf)
+
+-   [GitHub repository for geonames](https://github.com/ropensci/geonames)
+
+GeoNames Web Services
+
+-   GeoNames Web Services documentation: <https://www.geonames.org/export/web-services.html>
