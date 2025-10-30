@@ -8,41 +8,45 @@ editor: visual
 
 ## CRKN process for working with ORCID-Data-Visualization:
 
-0\. sync changes in your forked repository on Github. \
+0. sync changes in your forked repository on Github. \
 
-1. sync changes in Github desktop. \
+1.  sync changes in Github desktop. \
 
-2. open repository in external editor. \
+2.  open repository in external editor. \
 
-3. make edits in external editor, and save. \
+3.  make edits in external editor, and save. \
 
-4. review changes in Github desktop. \
+4.  review changes in Github desktop. \
 
-5. create commit, using issue# in Summary field. \
+5.  create commit, using issue# in Summary field. \
 
-6. push commit to your forked repo. \
+6.  push commit to your forked repo. \
 
-7. go to your forked repo, and review changes. \
+7.  go to your forked repo, and review changes. \
 
-8. using your forked repo, send a pull request. 
+8.  using your forked repo, send a pull request. 
 
 ## RStudio version:
 
-0\. sync changes in your forked repository on Github. \
+0. sync changes in your forked repository on Github. \
 
-1. pull changes in RStudio. \
+1.  pull changes in RStudio. \
 
-2. open file in RStudio \
+2.  open file in RStudio \
 
-3. make edits in RStudio, and save.  \
+3.  make edits in RStudio, and save.  \
 
-4. create commit, using issue# in Summary field. \
+4.  create commit, using issue# in Summary field. \
 
-5. push commit to your forked repo. \
+5.  push commit to your forked repo. \
 
-6. go to your forked repo, and review changes. \
+6.  go to your forked repo, and review changes. \
 
-7. using your forked repo, send a pull request. 
+7.  using your forked repo, send a pull request. 
+
+## Known issues reported by Kaela Ramhit from Lyrasis
+
+Nikolas Lamarre mentioned a few known issues and shared a file with Elizabeth after class. They've been added to the [CEWIL Bug Tracker](https://github.com/orgs/crkn-rcdr/projects/21) and are available for anyone to work on.
 
 ## Mount Allison values for ORCID-Data-Visualization
 

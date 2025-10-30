@@ -5,7 +5,7 @@
 
 ## CRKN process for working with ORCID-Data-Visualization:
 
-0\. sync changes in your forked repository on Github.   
+0.  sync changes in your forked repository on Github.   
 
 1.  sync changes in Github desktop.   
 
@@ -25,7 +25,7 @@
 
 ## RStudio version:
 
-0\. sync changes in your forked repository on Github.   
+0.  sync changes in your forked repository on Github.   
 
 1.  pull changes in RStudio.   
 
@@ -40,6 +40,13 @@
 6.  go to your forked repo, and review changes.   
 
 7.  using your forked repo, send a pull request. 
+
+## Known issues reported by Kaela Ramhit from Lyrasis
+
+Nikolas Lamarre mentioned a few known issues and shared a file with
+Elizabeth after class. They’ve been added to the [CEWIL Bug
+Tracker](https://github.com/orgs/crkn-rcdr/projects/21) and are
+available for anyone to work on.
 
 ## Mount Allison values for ORCID-Data-Visualization
 
