@@ -24,8 +24,8 @@ In the software engineering world loads of teams use the idea of "*story points*
 
 || Important | Less Important |
 |:---:|---|---|
-|**Urgent**|<ul><li>leaflet and shinny integration</li></ul> |<ul><li>pull 5 years of MTA & 5y of Bishops orcid data from API</li></ul>|
-|**Not Urgent**| <ul><li>pick a section of documentation and update</li> <li>changing working directory to relative path</li> <li>tidyverse core packages</li> <li>is roadoi needed?</li> </ul>|<ul><li> were student researchers employed or studying at the time? </li> <li>creating a student research dashboard</li></ul>|
+|**Urgent**|<ul><li>leaflet and shinny integration</li> <li>no location data for co authors</li> <li>geonames endless check</li> </ul> |<ul><li>pull 5 years of MTA & 5y of Bishops orcid data from API</li> <li>create a test dataset</li> </ul>|
+|**Not Urgent**| <ul><li>pick a section of documentation and update</li> <li>changing working directory to relative path</li> <li>tidyverse core packages</li> <li>is roadoi needed?</li> <li>refactoring the R code</li> <li>installing packages rcrossref</li> </ul>|<ul><li> were student researchers employed or studying at the time? </li> <li>creating a student research dashboard</li></ul>|
 
 * bishops mount a comparison (level )
 	* the same way students in the Chem/Biochem class compared  different professors, try using the API to pull the past 5 years of data on MTA proffesors and Bishops professors. What sort of questions can we ask when comparing the two institutions?
@@ -44,6 +44,14 @@ In the software engineering world loads of teams use the idea of "*story points*
 * Student research dashboard (level )
 	* using education section and working with the API to create a dashboard that looks specifically at student research. Maybe try it out with MTA 20-25 student research.
 * convert the program from R to python (level )
+* location data for co authors (level )
+* refactoring R code (level )
+* installing packages rcrossref (level )
+  * no need to install from github, now apart of CRAN tools
+* create a test dataset
+  * for comparison, a version 0 to input into shinny and if you change anything use it to comapre data before and after making a change
+* french translation
+* tidying up the code (filenames, variable names, camelcase & dashes where possible, YYYYMMDD, etc. )
 
 
 ### How to write good bug reports
