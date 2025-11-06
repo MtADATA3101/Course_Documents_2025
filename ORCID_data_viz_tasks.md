@@ -27,31 +27,31 @@ In the software engineering world loads of teams use the idea of "*story points*
 |**Urgent**|<ul><li>leaflet and shinny integration</li> <li>no location data for co authors</li> <li>geonames endless check</li> </ul> |<ul><li>pull 5 years of MTA & 5y of Bishops orcid data from API</li> <li>create a test dataset</li> </ul>|
 |**Not Urgent**| <ul><li>pick a section of documentation and update</li> <li>changing working directory to relative path</li> <li>tidyverse core packages</li> <li>is roadoi needed?</li> <li>refactoring the R code</li> <li>installing packages rcrossref</li> </ul>|<ul><li> were student researchers employed or studying at the time? </li> <li>creating a student research dashboard</li></ul>|
 
-* bishops mount a comparison (level )
+* bishops mount a comparison **(level B)**
 	* the same way students in the Chem/Biochem class compared  different professors, try using the API to pull the past 5 years of data on MTA proffesors and Bishops professors. What sort of questions can we ask when comparing the two institutions?
-- update documentation (level )
+- update documentation **(level C)**
 	* Pick a "section", big or small, of the documention you'd like to work on. Explain how the code the documentation refers to works & why certain decisions were made.
-* student researchers employment vs studying at the time (level )
+* student researchers employment vs studying at the time **(level B)**
 	* Searching for student research on ORCID can be a little cumbersome is it possible to make this query more efficient ?
-* leaflet and shinny integration (level )
+* leaflet and shinny integration **(level A)**
 	* there's an issue dispalying leaflet maps in shinny applications, this could be an underlying data problem or a depreciated Geonames problem
-* working directory to relative path & why its good for code reproducibility (level )
+* working directory to relative path & why its good for code reproducibility **(level B)**
   * why should we change working directory paths to relative paths and why would that be a positive change to make?
-* tidyverse core packages
+* tidyverse core packages **(level C)**
   * using tidyverse rather than a long list of each individual package
-* is roadoi needed?
+* is roadoi needed? **(level B)**
   * involves messing around with the code and removing packages that don't necessarily need to be involved
-* Student research dashboard (level )
+* Student research dashboard **(level A)**
 	* using education section and working with the API to create a dashboard that looks specifically at student research. Maybe try it out with MTA 20-25 student research.
-* convert the program from R to python (level )
-* location data for co authors (level )
-* refactoring R code (level )
-* installing packages rcrossref (level )
+* convert the program from R to python **(level A)**
+* location data for co authors **(level A)**
+* refactoring R code **(level B)**
+* installing packages rcrossref **(level C)**
   * no need to install from github, now apart of CRAN tools
-* create a test dataset
+* create a test dataset **(level B)**
   * for comparison, a version 0 to input into shinny and if you change anything use it to comapre data before and after making a change
-* french translation
-* tidying up the code (filenames, variable names, camelcase & dashes where possible, YYYYMMDD, etc. )
+* french translation **(level A)**
+* tidying up the code (filenames, variable names, camelcase & dashes where possible, YYYYMMDD, etc. ) **(level C)**
 
 
 ### How to write good bug reports
