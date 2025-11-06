@@ -4,6 +4,16 @@ format: gfm
 editor: visual
 ---
 
+## Plan
+
+-   Expectations
+
+-   Assignment 7 (not posted yet, now due Nov. 14): summarize your contributions
+
+-   Ideas for finding bugs / problems
+
+-   CEWIL bug tracker: moving ahead from In triage / In progress and assigning follow-up
+
 ## Project Expectations
 
 Reminder of [ungrading expectations](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/lectures/DATA_3101_course_introduction.md#ungrading), including CEWIL project contributions.
@@ -30,23 +40,25 @@ Assignment 7 is listed in the syllabus as CEWIL / CRKN contribution summary (due
 
 -   C level work, and:
 
--   At least one additional bug or problem described, using James MacGregor's criteria for a good bug:
+    -   At least two additional bugs or problems described, using James MacGregor's criteria for a good bug:
 
-    -   Specific title
+        -   Specific title
 
-    -   Description of the bug/issue
+        -   Description of the bug/issue
 
-    -   Steps to replicate
+        -   Steps to replicate
 
-    -   Screenshots
+        -   Screenshots
 
--   Resolution of a second bug or problem
+            OR:
+
+    -   Either for your bug/problem or another, edit the files on your fork to resolve a second bug, create a pull request in the CRKN project, and respond to any review comments.
 
 ### Substantive contribution to project (A level)
 
--   B level work, and a third bug reported and resolved OR
+-   B level work, and more bugs/problems reported or resolved OR
 
--   C level work, and major progress towards a priority identified by CRKN:
+-   C level work, and major progress towards a priority identified by CRKN. This progress could include locating the specific source of one of these problems in the code file but needing help resolving it. Group work is encouraged.
 
     -   Increasing the completeness of the data output file (location data for coauthors)
 
@@ -61,6 +73,34 @@ Assignment 7 is listed in the syllabus as CEWIL / CRKN contribution summary (due
 ## Reminder: AI use
 
 If you use AI in this project, you must disclose it in the CRKN bug tracker and your assignment 7 submission.
+
+## Ideas: Not in bug tracker yet
+
+-   Approaches to find new ideas for bugs:
+
+    -   Run a code file slowly, section by section, and add a bug for a warning or error that has not been included in the bug tracker yet.
+
+    -   Look at a data frames or tibbles created by the code. Does it match what you expect based on the comments? Are there unexpected columns, values, or a lot of unexpected NAs? Report it.
+
+-   Shiny: Include DOIs/links to the collaboration resources 
+
+-   Look at the code improvement comments in the R scripts:
+
+    -   Propose moving them to the bug tracker and deleting them from the scripts
+
+    -   Can you complete any of these code improvements?
+
+-   Test the code using method 2 with [additional Ringgold values](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/lectures/DATA_3101_20251030_crkn_meeting_notes.md#mount-allison-values-for-orcid-data-visualization) (starting approximately line 170) and compare your output data file to data using method 1.
+
+    -   Describe the differences in a bug or your Assignment 7 submission.
+
+-   Test the code using different start dates. For example, with my_year = 2020 on first run, and my_year = 2023 on the second run. Do you have different output files? Different Shiny visualizations? Nik said he had a problem with the date ranges.
+
+    -   Share your output files and/or a screenshot of the Shiny visualization in the bug tracker.
+
+-   Consider the pros and cons of removing all items from the environment rm(list = ls()). Do you like this approach?
+
+-   Suggest a way to prevent overwriting your older data files every time you run the code.
 
 ## Done
 
@@ -82,7 +122,9 @@ Topic: Shiny visualization
 
 -   #34 [Strange X Axis in Shiny Visualization ggplot/ploty/reactive issue](https://github.com/crkn-rcdr/ORCID-Data-Visualization/issues/34#top): bug submitted by Christian, solution proposed by Catherine, pull request by Catherine
 
-## In progress (discuss availability for completion)
+## In triage or progress (discuss availability for completion)
+
+This is a list by topic of the bug tracker based on my review on Nov. 5. We'll go to the project bug tracker to discuss them.
 
 ### Topic: R packages
 
@@ -143,29 +185,3 @@ Topic: Shiny visualization
 ### Topic: New approaches & future developments
 
 -   #31 [Consider streamlining by making a specialized R package](https://github.com/crkn-rcdr/ORCID-Data-Visualization/issues/31): submitted by Adan
-
-## Ideas: Not in bug tracker yet
-
--   Approaches to find new ideas for bugs:
-
-    -   Run a code file slowly, section by section, and add a bug for a warning or error that has not been included in the bug tracker yet.
-
-    -   Look at the dataframes created by the code. Does it match what you expect based on the comments? Are there unexpected columns, values, or a lot of unexpected NAs? Report it.
-
--   Look at the code improvement comments in the R scripts:
-
-    -   Propose moving them to the bug tracker and deleting them from the scripts
-
-    -   Can you complete any of these code improvements?
-
--   Test the code using method 2 with [additional Ringgold values](https://github.com/MtADATA3101/Course_Documents_2025/blob/main/lectures/DATA_3101_20251030_crkn_meeting_notes.md#mount-allison-values-for-orcid-data-visualization) (starting approximately line 170) and compare your output data file to data using method 1.
-
-    -   Describe the differences in a bug.
-
--   Test the code using different start dates. For example, with my_year = 2020 on first run, and my_year = 2023 on the second run. Do you have different output files? Different Shiny visualizations? Nik said he had a problem with the date ranges.
-
-    -   Share your output files and/or a screenshot of the Shiny visualization in the bug tracker.
-
--   Consider the pros and cons of removing all items from the environment rm(list = ls()). Do you like this approach?
-
--   Suggest a way to prevent overwriting your older data files every time you run the code.
