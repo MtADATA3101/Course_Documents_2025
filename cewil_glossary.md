@@ -12,8 +12,9 @@
 
 ## Persistent Identifiers
 
-- PID
-- ORCID 
+- PID - "a long-lasting digital links to research like journals, researchers or institutions", usually used with digital objects that are accessiblle over the internet 
+reference - https://www.crkn-rcdr.ca/en/persistent-identifiers 
+- ORCID
 - DOI  
 - ISSN = stands for international standard serial number,
 it is an 8 digit number that is specific to publications (like journals and other serial publications).
