@@ -3,7 +3,8 @@
 
 ## Organizations
 
-- CRKN
+- CRKN (Canadian Research knowledge Network) allows academic libraries to be shared across Canada quickly and freely 
+
 - Digital Research Alliance of Canada
 - DataCite Canada Consortium
 - CrossRef
