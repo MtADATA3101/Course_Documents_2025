@@ -15,11 +15,18 @@
 - PID - "a long-lasting digital links to research like journals, researchers or institutions", usually used with digital objects that are accessiblle over the internet 
 reference - https://www.crkn-rcdr.ca/en/persistent-identifiers 
 - ORCID
+<<<<<<< Updated upstream
 - DOI  
 - ISSN = stands for international standard serial number,
 it is an 8 digit number that is specific to publications (like journals and other serial publications).
 Using ISSN enables tracking  for previous names, publishers and other history.
 https://ec-europa-eu.libguides.com/identifiers/objects/issn
+=======
+- DOI
+- ISSN
+    - According to the [Government of Canada Website](https://www.canada.ca/en/library-archives/services/publishers/issn.html):
+      >"An International Standard Serial Number (ISSN) is an 8-digit code that uniquely identifies a serial or other continuing resource (periodical, magazine, journal, newspaper, annual, monographic series, website or database). Canadian publishers are not obligated to obtain ISSNs, but Government of Canada publishers are required to use them. ISSN Canada provides ISSNs for free."
+>>>>>>> Stashed changes
 
 ## Concepts
 
