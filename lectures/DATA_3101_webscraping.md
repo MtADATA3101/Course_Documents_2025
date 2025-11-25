@@ -34,6 +34,33 @@ Using a few ideas from:
 - [rvest](https://rvest.tidyverse.org/) for web scraping (part of
   non-core tidyverse)
 
+``` r
+library(tidyverse)
+```
+
+    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+    ✔ dplyr     1.1.4     ✔ readr     2.1.5
+    ✔ forcats   1.0.0     ✔ stringr   1.5.2
+    ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+    ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+    ✔ purrr     1.1.0     
+    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    ✖ dplyr::filter() masks stats::filter()
+    ✖ dplyr::lag()    masks stats::lag()
+    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+``` r
+library(polite)
+library(rvest)
+```
+
+
+    Attaching package: 'rvest'
+
+    The following object is masked from 'package:readr':
+
+        guess_encoding
+
 ## Being ‘polite’
 
 The polite library has two functions: “bow” and “scrape.”
@@ -59,8 +86,12 @@ Unsurprisingly, Instagram will not allow us to scrape data.
 *Theory and Application of Categories* is a journal with static
 webpages.
 
-Scraping the whole page in this way isn’t very effective. We get a list
-of two (node and doc) with external pointers.
+``` r
+session_TAC_homepage <- bow("http://www.tac.mta.ca/tac/")
+```
+
+Scraping the whole page with the scrape isn’t very effective. We get a
+list of two (node and doc) with external pointers.
 
 We need to narrow down what we want to scrape by looking at the web page
 HTML and CSS and using rvest functions.
@@ -92,6 +123,10 @@ Scrape one article using read_html() function from rvest. We’re only
 going to read the article in once (to be consistent with polite,
 described earlier).
 
+``` r
+TAC_article <- read_html("http://www.tac.mta.ca/tac/volumes/44/1/44-01abs.html") 
+```
+
 Now we can experiment with using different elements to try to identify
 the important data we want:
 
@@ -120,6 +155,15 @@ We will use three functions from rvest:
 
 - html_element() retrieves the first match
 
+``` r
+TAC_article |> 
+  html_elements("a") |> 
+  html_attr("href") 
+```
+
+    [1] "http://www.tac.mta.ca/tac/volumes/44/1/44-01.pdf"
+    [2] "../../../index.html"                             
+
 Now that we’ve successfully identified ways to get the author and title
 from the article page, we can go to the homepage and move on to a more
 complex problem.
@@ -129,7 +173,8 @@ all the articles in a volume?
 
 There is more than one approach, but here’s what I suggest:
 
-- Get a list of the links for a specific volume from the homepage
+- For a single volume, get a list of the links for all the related
+  article pages from the homepage
   - To do this, we’ll need to use str_subset() function from Chapter 15
     Regular Expressions
   - Here are some links for volume 43:
@@ -144,10 +189,29 @@ There is more than one approach, but here’s what I suggest:
 
 Step 1: Scrape homepage as tac_index
 
+``` r
+tac_index <- read_html("http://www.tac.mta.ca/tac/") 
+```
+
 Step 2: Create a list of all the links for your chosen volume.
+
+``` r
+tac_links <- tac_index |> 
+  html_elements("a") |> 
+  html_attr("href") |> 
+  str_subset("44-..abs") |> 
+  str_unique() 
+
+str(tac_links)
+```
+
+     chr [1:38] "volumes/44/1/44-01abs.html" "volumes/44/2/44-02abs.html" ...
 
 Step 3: Add the first part of the URL to each item in the list of
 tac_links
+
+We’ll use glue() to add “<http://www.tac.mta.ca/tac/>” before each value
+in the tac_links list.
 
 Step 4: Read the HTML for each link
 
@@ -166,13 +230,21 @@ article
 We’ll use map to iterate through the pages and rvest functions to get
 the data we want.
 
+Thinking back to tidy data concepts, what would we want to change about
+this dataframe?
+
+Reminder: Tidy data rules
+
+1.  Each variable must have its own column.
+
+2.  Each observation must have its own row.
+
+3.  Each value must have its own cell.
+
 ## Dynamic Websites
 
 Many websites have dynamic elements that update in real-time or based on
 user interaction.
-
-The flight data on the Moncton airport website is an example of a
-dynamic element.
 
 rvest has some experimental functions for interacting with live
 websites.
@@ -185,3 +257,6 @@ More established approaches include:
 
 - selenider: Concise, Lazy and Reliable Wrapper for ‘chromote’ and
   ‘selenium’
+
+These tools can also be used to get data from sites that are difficult
+to scrape, like the Moncton flight info table.
