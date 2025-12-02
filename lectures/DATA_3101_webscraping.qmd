@@ -1,0 +1,228 @@
+---
+title: "Web Scraping"
+format: gfm
+editor: visual
+---
+
+# Web Scraping
+
+## Before you get started
+
+1.  Does the data source have an API you can use? Does it have an R package? This is the easier and more reproducible approach to getting data.
+
+2.  Check the terms and conditions of the website to ensure you are not in violation.
+
+3.  Get ready to re(learn) HTML, CSS, and more! See [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
+
+## Resources:
+
+[R4DS Chapter 24 Webscraping](https://r4ds.hadley.nz/webscraping.html)
+
+Using a few ideas from:
+
+[R4DS Chapter 15 Regular expressions](https://r4ds.hadley.nz/regexps)
+
+[R4DS Chapter 26 Iteration](https://r4ds.hadley.nz/iteration)
+
+## R packages
+
+-   tidyverse for working with data
+
+-   [polite](https://dmi3kno.github.io/polite/) for web etiquette
+
+-   [rvest](https://rvest.tidyverse.org/) for web scraping (part of non-core tidyverse)
+
+```{r load libraries}
+library(tidyverse)
+library(polite)
+library(rvest)
+```
+
+## Being 'polite'
+
+The polite library has two functions: "bow" and "scrape."
+
+"The three pillars of a `polite session` are **seeking permission, taking slowly and never asking twice**."
+
+Let's start by checking whether we can politely scrape three websites using bow.
+
+Instagram: <https://www.instagram.com/>
+
+*Theory and Application of Categories*: <http://www.tac.mta.ca/tac/>
+
+Moncton flight info: <https://cyqm.ca/flight-info/flights/>
+
+#### Polite example 1: Instagram
+
+```{r polite example 1: Instagram}
+
+```
+
+Unsurprisingly, Instagram will not allow us to scrape data.
+
+#### Polite example 2: *Theory and Application of Categories*
+
+*Theory and Application of Categories* is a journal with static webpages.
+
+```{r polite example 2: Theory and Application of Categories }
+session_TAC_homepage <- bow("http://www.tac.mta.ca/tac/")
+```
+
+Scraping the whole page with the scrape isn't very effective. We get a list of two (node and doc) with external pointers.
+
+We need to narrow down what we want to scrape by looking at the web page HTML and CSS and using rvest functions.
+
+#### Polite example 3: Moncton airport flights
+
+```{r polite example 3: Moncton airport flights}
+
+```
+
+## Scraping with Rvest
+
+For Theory and Application of Categories, we'll be looking at two pages in detail:
+
+-   Homepage: [http://www.tac.mta.ca/tac/](http://www.tac.mta.ca/tac/%22)
+
+-   One article page (can be any article): <http://www.tac.mta.ca/tac/volumes/42/1/42-01abs.html>
+
+You need to find out how to inspect elements in your browser. For some browsers, you might first need to turn on developer tools.
+
+-   Try right-clicking on the page and selecting inspect element from the menu
+
+-   Search for keyboard shortcuts for your browser
+
+Since I am using Chrome on a Mac, I can use the keyboard shortcut **command-option-C**
+
+Scrape one article using read_html() function from rvest. We're only going to read the article in once (to be consistent with polite, described earlier).
+
+```{r scrape one article using read_html}
+TAC_article <- read_html("http://www.tac.mta.ca/tac/volumes/44/1/44-01abs.html") 
+```
+
+Now we can experiment with using different elements to try to identify the important data we want:
+
+-   author(s)
+
+-   title
+
+We will use three functions from rvest:
+
+-   html_elements() to select elements from the HTML
+
+    -   headings: h1 to h6
+
+    -   paragraphs: p
+
+    -   list items: li inside ul
+
+    -   links: a
+
+        -   HTML links: element = a, attribute = href
+
+-   html_text2() to retrieve the raw text from an element
+
+-   html_attr() to retrieve the value in an attribute. An example of an element with an attribute is the tag "a" and the attribute "href"
+
+-   html_element() retrieves the first match
+
+```{r experiment with identifying data}
+TAC_article |> 
+  html_elements("a") |> 
+  html_attr("href") 
+```
+
+Now that we've successfully identified ways to get the author and title from the article page, we can go to the homepage and move on to a more complex problem.
+
+What if we wanted to create a table with authors, titles, and links for all the articles in a volume?
+
+There is more than one approach, but here's what I suggest:
+
+-   For a single volume, get a list of the links for all the related article pages from the homepage
+    -   To do this, we'll need to use str_subset() function from Chapter 15 Regular Expressions
+    -   Here are some links for volume 43:
+        -   <http://www.tac.mta.ca/tac/volumes/43/1/43-01abs.html>
+        -   <http://www.tac.mta.ca/tac/volumes/43/2/43-02abs.html>
+        -   <http://www.tac.mta.ca/tac/volumes/43/14/43-14abs.html>
+        -   they all include 43, followed by a dash, followed by two numbers, followed by abs
+        -   we can represent that in a regular expression as 43-..abs
+-   Read the HTML for each page, using map() from Chapter 26 Iterate
+-   Create a tibble using rvest functions
+
+Step 1: Scrape homepage as tac_index
+
+```{r read TAC homepage}
+tac_index <- read_html("http://www.tac.mta.ca/tac/") 
+```
+
+Step 2: Create a list of all the links for your chosen volume.
+
+```{r list of links to article pages}
+tac_links <- tac_index |> 
+  html_elements("a") |> 
+  html_attr("href") |> 
+  str_subset("44-..abs") |> 
+  str_unique() 
+
+str(tac_links)
+```
+
+Step 3: Add the first part of the URL to each item in the list of tac_links
+
+We'll use glue() to add "<http://www.tac.mta.ca/tac/>" before each value in the tac_links list.
+
+```{r complete the links}
+ 
+```
+
+Step 4: Read the HTML for each link
+
+To do this, we need to iterate through each item in tac_links. We can do this using the map() function from [R4DS Chapter 26 Iterate](https://r4ds.hadley.nz/iteration.html). Map applies a function to each element of a vector. In this case, we are applying read_html to each item in the list tac_links.
+
+```{r read the html for tac_links}
+
+```
+
+The output, pages, is a list where each item is the equivalent of TAC_article from earlier in the class.
+
+Step 5: Make a tibble with authors, title, and first link for each article
+
+We'll use map to iterate through the pages and rvest functions to get the data we want.
+
+```{r}
+
+```
+
+Thinking back to tidy data concepts, what would we want to change about this dataframe?
+
+Reminder: Tidy data rules
+
+1.  Each variable must have its own column.
+
+2.  Each observation must have its own row.
+
+3.  Each value must have its own cell.
+
+```{r}
+
+```
+
+## Dynamic Websites
+
+Many websites have dynamic elements that update in real-time or based on user interaction.
+
+rvest has some experimental functions for interacting with live websites.
+
+More established approaches include:
+
+-   RSelenium: automate browser
+
+-   Chromote: control a Chromium browser
+
+-   selenider: Concise, Lazy and Reliable Wrapper for 'chromote' and 'selenium'
+
+These tools can also be used to get data from sites that are difficult to scrape, like the Moncton flight info table.
+
+```{r selenider demo}
+
+```
